@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+<title>点击图片切换</title>
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul li a img{
+	width: 270px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+}
+
+ul{
+	margin-top: 30px;
+}
+
+li{
+	list-style: none;
+	float:left;
+}
+
+#placeholder{
+	 width:534px;
+	 height:300px;
+	 margin-top:30px;
+	 margin-left:30px;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+	<li>
+		<a href="img/1.jpg">
+			<img src="img/1.jpg"/>
+	  </a>
+  </li>
+
+	<li>
+		<a href="img/2.jpg">
+			<img  src="img/2.jpg"/>
+		</a>
+	</li>
+
+	<li>
+		<a href="img/3.jpg">
+		  <img  src="img/3.jpg"/>
+	  </a>
+	</li>
+
+	<li>
+		<a href="img/4.jpg">
+			<img  src="img/4.jpg"/>
+		</a>
+	</li>
+</ul>
+
+<img id="placeholder" src="img/5.jpg"/>
+
+<script>
+function showPic(object_href){
+	placeholder.src=object_href.href;
+}
+function pageload(){
+	var links=document.getElementsByTagName("a");
+	for(var i=0;i<links.length;i++){
+		links[i].onclick=function(){
+			showPic(this);
+			return false;
+		}
+	}
+}
+pageload();
+</script>
+
+</body>
+</html>
